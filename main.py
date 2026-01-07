@@ -107,7 +107,9 @@ def calc_elo():
 
         team_2_winprob = 1/(1+10 ** ((team_1_elo_before - team_2_elo_before )/400) )
 
-        K = 16 * (1 + 0.1 * games[game]['points_diff'])
+        # K = 16 * (1 + 0.1 * games[game]['points_diff'])
+        K = 16 * ( (games[game]['points_diff'])**0.5 )
+
 
         if games[game]['team_1']['winner'] == True:
             team1W = 1
