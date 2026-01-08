@@ -572,6 +572,10 @@ def add_to_db_rankings():
         currentOrder = json.load(file)
 
 
+    with open('games.json', 'r') as file:
+        gamesFile = json.load(file)
+
+    currentOrder['games'] = gamesFile
 
 
     RANKINGS_API_TOKEN = os.getenv('RANKINGS_API_TOKEN')
