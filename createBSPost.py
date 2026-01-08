@@ -114,17 +114,17 @@ def create_post():
     with open('post.json') as postfile:
         postinfo = json.load(postfile)
 
-    posttext = f"QuantusBaseball Update as of {formatted_time}: \n{postinfo['winning_team']} beat {postinfo['losing_team']} {postinfo['score']} \nSee more at https://QuantusSports.pages.dev/ \n#NBA"
+    posttext = f"QuantusBasketball Update as of {formatted_time}: \n{postinfo['winning_team']} beat {postinfo['losing_team']} {postinfo['score']} \nSee more at https://QuantusSports.pages.dev/ \n#NBA"
     posttextX = f"QuantusBaseball Update as of {formatted_time}: \n{postinfo['winning_team']} beat {postinfo['losing_team']} {postinfo['score']} \nSee more at https://QuantusSports.pages.dev/ \n#NHL\n{mlb_team_hashtags[postinfo['winning_team']]}\n{mlb_team_hashtags[postinfo['losing_team']]}"
 
 
     facets = [
         {
             "index": {
-                "byteStart": posttext.find("https://QuantasSports.pages.dev/"),
-                "byteEnd": posttext.find("https://QuantasSports.pages.dev/") + len("https://QuantasSports.pages.dev/")
+                "byteStart": posttext.find("https://QuantusSports.pages.dev/"),
+                "byteEnd": posttext.find("https://QuantusSports.pages.dev/") + len("https://QuantusSports.pages.dev/")
             },
-            "features": [{"$type": "app.bsky.richtext.facet#link", "uri": "https://QuantasSports.pages.dev/"}]
+            "features": [{"$type": "app.bsky.richtext.facet#link", "uri": "https://QuantusSports.pages.dev/"}]
         },
         {
             "index": {
